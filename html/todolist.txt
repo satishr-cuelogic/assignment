@@ -1,0 +1,29 @@
+<html>
+        <head>
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+                 <script src="../../assignment/js/validation.js" type="text/javascript"></script>  
+                 <script src="../../assignment/js/todolist.js" type="text/javascript"></script>  
+                </head>
+<body onload="userAuthinticated()">
+  <div class="form-group" style="text-align: right;">
+     <button type="button" class="btn btn-primary" onclick="operation.newTask()">Add New Task</button>
+     <button type="button" class="btn btn-primary" onclick="logout()">Logout</button>
+  </div> 
+  <div class="form-group">
+        <label for="fromdodate">From Date:</label>
+        <input type="date" class="form-control" id="fromdodate">
+        <label for="tododate">To Date:</label>
+        <input type="date" class="form-control" id="tododate">
+        <div class="form-group">
+                <label class="checkbox-inline"><input type="checkbox"  name="markasdone" id="markasdone" >Mark As Done</label>
+                <label class="checkbox-inline"><input type="checkbox"  name="pending" id="pending" >Pending</label>
+        </div>
+        <button type="button" class="btn btn-primary" onclick="todotableCreate(document.getElementById('fromdodate').value,document.getElementById('tododate').value,document.getElementById('pending').checked==true?'Yes':'No',document.getElementById('markasdone').checked==true?'Yes':'No')">Search</button>
+ </div>
+ <script>
+              todotableCreate('','','No','No');            
+</script>              
+</body>
+</html>
